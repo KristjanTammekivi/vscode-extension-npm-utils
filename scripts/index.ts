@@ -1,11 +1,11 @@
 import webpack, { Stats } from 'webpack';
 
 import args from './configs/args';
-import devWebpackConfig from './configs/webpack.dev';
-import prodWebpackConfig from './configs/webpack.prod';
+import developmentWebpackConfig from './configs/webpack.dev';
+import productionWebpackConfig from './configs/webpack.prod';
 
-const isProd = process.env.NODE_ENV !== 'development';
-const compiler = webpack(isProd ? prodWebpackConfig : devWebpackConfig);
+const isProduction = process.env.NODE_ENV !== 'development';
+const compiler = webpack(isProduction ? productionWebpackConfig : developmentWebpackConfig);
 
 function handler(error?: Error | null | undefined, stats?: Stats) {
     if (error) {
@@ -13,12 +13,12 @@ function handler(error?: Error | null | undefined, stats?: Stats) {
         return;
     }
 
-    const prodStats = {
+    const productionStats = {
         preset: 'normal',
-        colors: true,
+        colors: true
     };
 
-    console.log(stats?.toString(isProd ? prodStats : 'minimal'));
+    console.log(stats?.toString(isProduction ? productionStats : 'minimal'));
 }
 
 if (args.watch) {

@@ -1,12 +1,13 @@
-# vscode extension boilerplate
+# NPM Utils
 
-[![GitHub](https://img.shields.io/github/license/tjx666/vscode-extension-boilerplate)](https://github.com/tjx666/vscode-extension-boilerplate/blob/master/LICENSE) [![Known Vulnerabilities](https://snyk.io/test/github/tjx666/vscode-extension-boilerplate/badge.svg?targetFile=package.json)](https://snyk.io/test/github/tjx666/vscode-extension-boilerplate?targetFile=package.json) [![Percentage of issues still open](https://isitmaintained.com/badge/open/tjx666/vscode-extension-boilerplate.svg)](http://isitmaintained.com/project/tjx666/vscode-extension-boilerplate') [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![GitHub](https://img.shields.io/github/license/KristjanTammekivi/vscode-extension-npm-utils)](https://github.com/KristjanTammekivi/vscode-extension-npm-utils/blob/master/LICENSE) [![Known Vulnerabilities](https://snyk.io/test/github/KristjanTammekivi/vscode-extension-npm-utils/badge.svg?targetFile=package.json)](https://snyk.io/test/github/KristjanTammekivi/vscode-extension-npm-utils?targetFile=package.json) [![Percentage of issues still open](https://isitmaintained.com/badge/open/KristjanTammekivi/vscode-extension-npm-utils.svg)](http://isitmaintained.com/project/KristjanTammekivi/vscode-extension-npm-utils') [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
-An awesome boilerplate for VSCode extension development. You can use it just as described in the [official documentation](https://code.visualstudio.com/api).
+VSCode extension to run npm commands from the command palette
 
-example extensions:
+## Features
 
-1. [View GitHub Repository](https://github.com/tjx666/view-github-repository)
-2. [Open in External App](https://github.com/tjx666/open-in-external-app)
-3. [VSCode Fe Helper](https://github.com/tjx666/vscode-fe-helper)
-4. [Scripting Listener](https://github.com/tjx666/scripting-listener)
+- npm: CI
+- npm: Install
+- npm: Add dependency
+- npm: Add dev-dependency
+- npm: Uninstall

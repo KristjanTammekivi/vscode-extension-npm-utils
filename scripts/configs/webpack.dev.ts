@@ -5,7 +5,7 @@ import commonWebpackConfig from './webpack.common';
 
 const devWebpackConfiguration: Configuration = merge(commonWebpackConfig, {
     mode: 'none',
-    devtool: 'nosources-source-map',
+    devtool: 'nosources-source-map'
 });
 
 export default devWebpackConfiguration;

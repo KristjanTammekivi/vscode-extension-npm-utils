@@ -12,25 +12,26 @@ const mergedConfiguration: Configuration = merge(commonWebpackConfig, {
     plugins: [
         new BannerPlugin({
             banner: '/** @preserve powered by vscode-extension-boilerplate(https://github.com/tjx666/vscode-extension-boilerplate) */',
-            raw: true,
-        }),
+            raw: true
+        })
     ],
     optimization: {
         minimize: true,
         minimizer: [
             new TerserPlugin({
                 parallel: true,
-                extractComments: false,
-            }),
-        ],
-    },
+                extractComments: false
+            })
+        ]
+    }
 });
 
-let prodWebpackConfiguration = mergedConfiguration;
+let productionWebpackConfiguration = mergedConfiguration;
 if (args.analyze) {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     mergedConfiguration.plugins!.push(new BundleAnalyzerPlugin() as any);
     const smp = new SpeedMeasurePlugin();
-    prodWebpackConfiguration = smp.wrap(mergedConfiguration);
+    productionWebpackConfiguration = smp.wrap(mergedConfiguration);
 }
 
-export default prodWebpackConfiguration;
+export default productionWebpackConfiguration;
