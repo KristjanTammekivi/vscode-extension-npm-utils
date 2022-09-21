@@ -1,5 +1,5 @@
 {
-    "name": "vscode-extension-npm-utils",
+    "name": "npm-utils",
     "displayName": "NPM Utils",
     "version": "0.0.1",
     "preview": true,
@@ -14,8 +14,7 @@
         "watch": "cross-env NODE_ENV=development ts-node --files -P ./scripts/tsconfig.json ./scripts --watch",
         "build": "cross-env NODE_ENV=production ts-node --files -P ./scripts/tsconfig.json ./scripts",
         "build-analyze": "npm run build -- --analyze",
-        "lint": "eslint --ext .ts './{scripts,src}/**/*.ts'",
-        "prepare": "husky install"
+        "lint": "eslint --ext .ts './{scripts,src}/**/*.ts'"
     },
     "author": {
         "name": "Kristjan Tammekivi",
@@ -44,7 +43,7 @@
         "url": "https://github.com/KristjanTammekivi/vscode-extension-npm-utils"
     },
     "engines": {
-        "vscode": "^1.51.0",
+        "vscode": "^1.71.0",
         "node": ">=14.15.1"
     },
     "categories": [
@@ -93,7 +92,7 @@
         "@types/mocha": "^9.1.0",
         "@types/node": "^17.0.21",
         "@types/terser-webpack-plugin": "^5.2.0",
-        "@types/vscode": "1.65.0",
+        "@types/vscode": "^1.71.0",
         "@types/webpack": "^5.28.0",
         "@types/webpack-bundle-analyzer": "^4.4.1",
         "@types/webpack-merge": "^5.0.0",
