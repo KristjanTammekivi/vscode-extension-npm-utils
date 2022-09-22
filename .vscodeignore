@@ -1,4 +1,5 @@
 node_modules/
+images/logo.svg
 
 # develop
 .vscode/

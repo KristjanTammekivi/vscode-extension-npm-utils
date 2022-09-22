@@ -6,8 +6,11 @@ VSCode extension to run npm commands from the command palette
 
 ## Features
 
-- npm: CI
+- npm: Clean Install (ci)
 - npm: Install
 - npm: Add dependency
 - npm: Add dev-dependency
 - npm: Uninstall
+- npm: Run Script
+- npm: Open NPM page for package
+

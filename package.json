@@ -1,8 +1,7 @@
 {
     "name": "npm-utils",
     "displayName": "NPM Utils",
-    "version": "0.0.1",
-    "preview": true,
+    "version": "1.0.0",
     "description": "VSCode extension to run npm commands from the command palette",
     "publisher": "kristjantammekivi",
     "icon": "images/logo.png",
@@ -18,7 +17,7 @@
     },
     "author": {
         "name": "Kristjan Tammekivi",
-        "url": "https://github.com/KristjanTammekivi",
+        "url": "https://tammekivi.ee",
         "email": "kristjantammekivi@gmail.com"
     },
     "badges": [
@@ -51,16 +50,20 @@
     ],
     "keywords": [
         "vscode",
-        "vscode-extension",
-        "vscode-extension-boilerplate",
-        "boilerplate"
+        "npm",
+        "npm install dependency",
+        "dependency",
+        "install",
+        "dependencies"
     ],
     "activationEvents": [
         "onCommand:NpmUtils.ci",
         "onCommand:NpmUtils.install",
         "onCommand:NpmUtils.install-dependency",
         "onCommand:NpmUtils.install-dev-dependency",
-        "onCommand:NpmUtils.uninstall-dependency"
+        "onCommand:NpmUtils.uninstall-dependency",
+        "onCommand:NpmUtils.show-npm-for-package",
+        "onCommand:NpmUtils.run-script"
     ],
     "contributes": {
         "commands": [
@@ -83,6 +86,14 @@
             {
                 "command": "NpmUtils.uninstall-dependency",
                 "title": "npm: Uninstall Dependency"
+            },
+            {
+                "command": "NpmUtils.show-npm-for-package",
+                "title": "npm: Open NPM page for package"
+            },
+            {
+                "command": "NpmUtils.run-script",
+                "title": "npm: Run Script"
             }
         ]
     },
