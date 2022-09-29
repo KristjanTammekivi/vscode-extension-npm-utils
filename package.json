@@ -1,7 +1,7 @@
 {
     "name": "npm-utils",
     "displayName": "NPM Utils",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "VSCode extension to run npm commands from the command palette",
     "publisher": "kristjantammekivi",
     "icon": "images/logo.png",

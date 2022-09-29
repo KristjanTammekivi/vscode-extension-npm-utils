@@ -18,24 +18,6 @@
             ],
             "sourceMaps": true,
             "preLaunchTask": "${defaultBuildTask}"
-        },
-        {
-            "name": "Extension Tests",
-            "type": "extensionHost",
-            "request": "launch",
-            "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}",
-                "--extensionTestsPath=${workspaceFolder}/dist/test",
-                "${workspaceFolder}/test-workspace"
-            ],
-            "outFiles": ["${workspaceFolder}/dist/**/*.js"],
-            "skipFiles": [
-                "<node_internals>/**",
-                "**/node_modules/**",
-                "**/Resources/app/out/vs/**"
-            ],
-            "sourceMaps": true,
-            "preLaunchTask": "tasks: watch-tests"
         }
     ]
 }

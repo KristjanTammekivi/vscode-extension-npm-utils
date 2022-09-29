@@ -1,6 +1,8 @@
 import vscode from 'vscode';
+import { getPrefixArgument, npm } from '../utils';
 
 export const npmInstallDependency = async () => {
+    const prefix = await getPrefixArgument();
     const npmPackageToInstall = await vscode.window.showInputBox({
         value: '',
         title: `Install NPM Package`,
@@ -12,9 +14,12 @@ export const npmInstallDependency = async () => {
             return null;
         }
     });
+    if (!npmPackageToInstall) {
+        return;
+    }
     const terminal = vscode.window.createTerminal({
         name: 'NPM Install'
     });
     terminal.show();
-    terminal.sendText(`npm i --save ${ npmPackageToInstall }`);
+    terminal.sendText(npm`${ prefix } install --save ${ npmPackageToInstall }`);
 };

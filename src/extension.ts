@@ -3,7 +3,7 @@ import { npmCi } from './commands/ci';
 import { npmInstall } from './commands/install';
 import { npmInstallDependency } from './commands/install-dependency';
 import { npmInstallDevDependency } from './commands/install-dev-dependency';
-import { npmUninstallDependency } from './commands/install-uninstall-dependency';
+import { npmUninstallDependency } from './commands/uninstall-dependency';
 import { npmRunScript } from './commands/npm-run-script';
 import { showNpmForPackage } from './commands/show-npm-for-package';
 
