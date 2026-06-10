@@ -26,3 +26,6 @@ tsconfig.test.json
 .eslintignore
 .prettierrc
 yarn.lock
+
+
+tsconfig*.json

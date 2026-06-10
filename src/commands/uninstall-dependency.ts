@@ -1,14 +1,20 @@
-import vscode from 'vscode';
+import vscode, { QuickPickItem } from 'vscode';
 import { findPackageDirectory, getPrefixArgument, npm, readPackageJson } from '../utils';
 
 export const npmUninstallDependency = async () => {
     const cwd = await findPackageDirectory();
     const prefix = await getPrefixArgument(cwd);
     const packageJson = await readPackageJson(cwd);
-    const dependencies = [...Object.keys(packageJson.dependencies || {}), ...Object.keys(packageJson.devDependencies || {})];
+    const separator = {
+        label: 'Dependencies',
+        kind: vscode.QuickPickItemKind.Separator
+    };
+    const deps = Object.keys(packageJson.dependencies || {}).map(x => ({ label: x }) as QuickPickItem);
+    const dependencies = [separator, ...deps, { ...separator, label: 'Dev Dependencies' }, ...Object.keys(packageJson.devDependencies || {}).map(x => ({ label: x }) as QuickPickItem)];
     const npmPackageToRemove = await vscode.window.showQuickPick(dependencies, {
         title: `Uninstall NPM Package`,
-        placeHolder: 'Package name'
+        placeHolder: 'Package(s)',
+        canPickMany: true
     });
     if (!npmPackageToRemove) {
         return;
@@ -17,5 +23,5 @@ export const npmUninstallDependency = async () => {
         name: 'NPM Uninstall'
     });
     terminal.show();
-    terminal.sendText(npm`${ prefix } remove ${ npmPackageToRemove }`);
+    terminal.sendText(npm`${ prefix } remove ${ npmPackageToRemove.map(pkg => pkg.label).join(' ') }`);
 };
